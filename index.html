@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Notes</title>
+</head>
+
+<body style="font-family: serif;">
+
+<div align="right">
+    <input type="text" id="search" placeholder="Search...">
+    <button onclick="searchNotes()">Search</button>
+</div>
+
+<h1>Python Notes</h1>
+
+<ul id="notes">
+    
+    <li><a href="Day05/Lecture01.html">Day 5 -
+
+    Lecture 1</a>
+
+<a href="PDF/Day01-Lecture01.pdf"
+
+download>
+
+Download PDF</a></li>
+</ul>
+
+<script>
+function searchNotes() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let items = document.querySelectorAll("#notes li");
+
+    items.forEach(function(item) {
+        if (item.textContent.toLowerCase().includes(input)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
